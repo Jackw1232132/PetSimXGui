@@ -4,42 +4,39 @@
 -- Instances:
 
 local GameGui = Instance.new("ScreenGui")
-local GuiFrame = Instance.new("Frame")
-local Corner = Instance.new("UICorner")
-local ExclusiveShop = Instance.new("TextButton")
-local UIGridLayout = Instance.new("UIGridLayout")
-local Golden = Instance.new("TextButton")
-local Trading = Instance.new("TextButton")
-local Upgrades = Instance.new("TextButton")
-local Achievements = Instance.new("TextButton")
-local Teleport = Instance.new("TextButton")
-local FusePets = Instance.new("TextButton")
-local Rainbow = Instance.new("TextButton")
-local EnchantPets = Instance.new("TextButton")
-local Collection = Instance.new("TextButton")
-local Merchant = Instance.new("TextButton")
-local DarkMatter = Instance.new("TextButton")
+local GameFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Main = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local MainFrame = Instance.new("Frame")
 local Bank = Instance.new("TextButton")
+local Collection = Instance.new("TextButton")
+local DarkMatter = Instance.new("TextButton")
+local EnchantPets = Instance.new("TextButton")
+local FusePets = Instance.new("TextButton")
+local Golden = Instance.new("TextButton")
+local Merchant = Instance.new("TextButton")
+local Rainbow = Instance.new("TextButton")
+local MainGrid = Instance.new("UIGridLayout")
+local Upgrades = Instance.new("TextButton")
 local Mastery = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local GoldenKey = "C"
-local TradingKey = "V"
-local UpgradesKey = "B"
-local AchievementsKey = "N"
-local TeleportKey = "M"
-local FuseKey = "L"
-local RainbowKey = "K"
-local ExclusiveShopKey = "J"
-local EnchantKey = "H"
-local CollectionKet = "G"
-local MerchantKey = "P"
-local DarkMatterKey = "O"
-local BankKey = "I"
-local MasteryKey = "U"
-local Can = false
+local Open = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local PlayerList = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local Main_2 = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local Title_2 = Instance.new("TextLabel")
+local List = Instance.new("ScrollingFrame")
+local ListTemplate = Instance.new("Frame")
+local Avatar = Instance.new("ImageLabel")
+local PlayerName = Instance.new("TextLabel")
+local PlayerDisplayName = Instance.new("TextLabel")
+local UIGridLayout = Instance.new("UIGridLayout")
 local Player = game.Players.LocalPlayer
-local PlaceIdd = 6284583030
-
+local Ready = false
+local Can = false
 
 --Properties:
 
@@ -47,277 +44,357 @@ GameGui.Name = "GameGui"
 GameGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 GameGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-GuiFrame.Name = "GuiFrame"
-GuiFrame.Parent = GameGui
-GuiFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-GuiFrame.BackgroundTransparency = 0.400
-GuiFrame.Position = UDim2.new(0.014551322, 0, 0.60641712, 0)
-GuiFrame.Size = UDim2.new(0, 327, 0, 344)
+GameFrame.Name = "GameFrame"
+GameFrame.Parent = GameGui
+GameFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GameFrame.BackgroundTransparency = 0.300
+GameFrame.Position = UDim2.new(0.0185933709, 0, 0.695187151, 0)
+GameFrame.Size = UDim2.new(0, 257, 0, 257)
 
-Corner.CornerRadius = UDim.new(0, 14)
-Corner.Name = "Corner"
-Corner.Parent = GuiFrame
+UICorner.Parent = GameFrame
 
-ExclusiveShop.Name = "ExclusiveShop"
-ExclusiveShop.Parent = GuiFrame
-ExclusiveShop.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-ExclusiveShop.BackgroundTransparency = 0.900
-ExclusiveShop.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ExclusiveShop.BorderSizePixel = 3
-ExclusiveShop.Size = UDim2.new(0, 163, 0, 59)
-ExclusiveShop.Font = Enum.Font.FredokaOne
-ExclusiveShop.Text = "Exclusive (C)"
-ExclusiveShop.TextColor3 = Color3.fromRGB(208, 208, 208)
-ExclusiveShop.TextScaled = true
-ExclusiveShop.TextSize = 14.000
-ExclusiveShop.TextWrapped = true
+Main.Name = "Main"
+Main.Parent = GameFrame
+Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Main.BackgroundTransparency = 0.200
+Main.Size = UDim2.new(0, 257, 0, 39)
 
-UIGridLayout.Parent = GuiFrame
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellPadding = UDim2.new(0, 1, 0, 1)
-UIGridLayout.CellSize = UDim2.new(0, 163, 0, 40)
+UICorner_2.Parent = Main
 
-Golden.Name = "Golden"
-Golden.Parent = GuiFrame
-Golden.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Golden.BackgroundTransparency = 0.900
-Golden.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Golden.BorderSizePixel = 3
-Golden.Size = UDim2.new(0, 163, 0, 59)
-Golden.Font = Enum.Font.FredokaOne
-Golden.Text = "Golden (V)"
-Golden.TextColor3 = Color3.fromRGB(208, 208, 208)
-Golden.TextScaled = true
-Golden.TextSize = 14.000
-Golden.TextWrapped = true
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Size = UDim2.new(0, 257, 0, 39)
+Title.Font = Enum.Font.FredokaOne
+Title.Text = "Gui"
+Title.TextColor3 = Color3.fromRGB(85, 255, 127)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
 
-Trading.Name = "Trading"
-Trading.Parent = GuiFrame
-Trading.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Trading.BackgroundTransparency = 0.900
-Trading.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Trading.BorderSizePixel = 3
-Trading.Size = UDim2.new(0, 163, 0, 59)
-Trading.Font = Enum.Font.FredokaOne
-Trading.Text = "Trading (L)"
-Trading.TextColor3 = Color3.fromRGB(208, 208, 208)
-Trading.TextScaled = true
-Trading.TextSize = 14.000
-Trading.TextWrapped = true
-
-Upgrades.Name = "Upgrades"
-Upgrades.Parent = GuiFrame
-Upgrades.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Upgrades.BackgroundTransparency = 0.900
-Upgrades.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Upgrades.BorderSizePixel = 3
-Upgrades.Size = UDim2.new(0, 163, 0, 59)
-Upgrades.Font = Enum.Font.FredokaOne
-Upgrades.Text = "Upgrades (N)"
-Upgrades.TextColor3 = Color3.fromRGB(208, 208, 208)
-Upgrades.TextScaled = true
-Upgrades.TextSize = 14.000
-Upgrades.TextWrapped = true
-
-Achievements.Name = "Achievements"
-Achievements.Parent = GuiFrame
-Achievements.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Achievements.BackgroundTransparency = 0.900
-Achievements.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Achievements.BorderSizePixel = 3
-Achievements.Size = UDim2.new(0, 163, 0, 59)
-Achievements.Font = Enum.Font.FredokaOne
-Achievements.Text = "Achievements (U)"
-Achievements.TextColor3 = Color3.fromRGB(208, 208, 208)
-Achievements.TextScaled = true
-Achievements.TextSize = 14.000
-Achievements.TextWrapped = true
-
-Teleport.Name = "Teleport"
-Teleport.Parent = GuiFrame
-Teleport.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Teleport.BackgroundTransparency = 0.900
-Teleport.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Teleport.BorderSizePixel = 3
-Teleport.Size = UDim2.new(0, 163, 0, 59)
-Teleport.Font = Enum.Font.FredokaOne
-Teleport.Text = "Teleport (B)"
-Teleport.TextColor3 = Color3.fromRGB(208, 208, 208)
-Teleport.TextScaled = true
-Teleport.TextSize = 14.000
-Teleport.TextWrapped = true
-
-FusePets.Name = "FusePets"
-FusePets.Parent = GuiFrame
-FusePets.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-FusePets.BackgroundTransparency = 0.900
-FusePets.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FusePets.BorderSizePixel = 3
-FusePets.Size = UDim2.new(0, 163, 0, 59)
-FusePets.Font = Enum.Font.FredokaOne
-FusePets.Text = "Fuse (K)"
-FusePets.TextColor3 = Color3.fromRGB(208, 208, 208)
-FusePets.TextScaled = true
-FusePets.TextSize = 14.000
-FusePets.TextWrapped = true
-
-Rainbow.Name = "Rainbow (M)"
-Rainbow.Parent = GuiFrame
-Rainbow.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Rainbow.BackgroundTransparency = 0.900
-Rainbow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Rainbow.BorderSizePixel = 3
-Rainbow.Size = UDim2.new(0, 163, 0, 59)
-Rainbow.Font = Enum.Font.FredokaOne
-Rainbow.Text = "Rainbow (P)"
-Rainbow.TextColor3 = Color3.fromRGB(208, 208, 208)
-Rainbow.TextScaled = true
-Rainbow.TextSize = 14.000
-Rainbow.TextWrapped = true
-
-EnchantPets.Name = "EnchantPets"
-EnchantPets.Parent = GuiFrame
-EnchantPets.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-EnchantPets.BackgroundTransparency = 0.900
-EnchantPets.BorderColor3 = Color3.fromRGB(0, 0, 0)
-EnchantPets.BorderSizePixel = 3
-EnchantPets.Size = UDim2.new(0, 163, 0, 59)
-EnchantPets.Font = Enum.Font.FredokaOne
-EnchantPets.Text = "Enchant (P)"
-EnchantPets.TextColor3 = Color3.fromRGB(208, 208, 208)
-EnchantPets.TextScaled = true
-EnchantPets.TextSize = 14.000
-EnchantPets.TextWrapped = true
-
-Collection.Name = "Collection"
-Collection.Parent = GuiFrame
-Collection.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Collection.BackgroundTransparency = 0.900
-Collection.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Collection.BorderSizePixel = 3
-Collection.Size = UDim2.new(0, 163, 0, 59)
-Collection.Font = Enum.Font.FredokaOne
-Collection.Text = "Collection (J)"
-Collection.TextColor3 = Color3.fromRGB(208, 208, 208)
-Collection.TextScaled = true
-Collection.TextSize = 14.000
-Collection.TextWrapped = true
-
-Merchant.Name = "Merchant"
-Merchant.Parent = GuiFrame
-Merchant.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Merchant.BackgroundTransparency = 0.900
-Merchant.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Merchant.BorderSizePixel = 3
-Merchant.Size = UDim2.new(0, 163, 0, 59)
-Merchant.Font = Enum.Font.FredokaOne
-Merchant.Text = "Merchant (T)"
-Merchant.TextColor3 = Color3.fromRGB(208, 208, 208)
-Merchant.TextScaled = true
-Merchant.TextSize = 14.000
-Merchant.TextWrapped = true
-
-DarkMatter.Name = "DarkMatter"
-DarkMatter.Parent = GuiFrame
-DarkMatter.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-DarkMatter.BackgroundTransparency = 0.900
-DarkMatter.BorderColor3 = Color3.fromRGB(0, 0, 0)
-DarkMatter.BorderSizePixel = 3
-DarkMatter.Size = UDim2.new(0, 163, 0, 59)
-DarkMatter.Font = Enum.Font.FredokaOne
-DarkMatter.Text = "Dark Matter (H)"
-DarkMatter.TextColor3 = Color3.fromRGB(208, 208, 208)
-DarkMatter.TextScaled = true
-DarkMatter.TextSize = 14.000
-DarkMatter.TextWrapped = true
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = GameFrame
+MainFrame.BackgroundColor3 = Color3.fromRGB(118, 118, 118)
+MainFrame.BackgroundTransparency = 0.100
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0, 0, 0.151750967, 0)
+MainFrame.Size = UDim2.new(0, 256, 0, 180)
 
 Bank.Name = "Bank"
-Bank.Parent = GuiFrame
-Bank.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Bank.BackgroundTransparency = 0.900
-Bank.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Bank.BorderSizePixel = 3
-Bank.Size = UDim2.new(0, 163, 0, 59)
+Bank.Parent = MainFrame
+Bank.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+Bank.BackgroundTransparency = 0.300
+Bank.BorderSizePixel = 2
+Bank.Position = UDim2.new(0.5, 0, 0.200000003, 0)
+Bank.Size = UDim2.new(0, 128, 0, 36)
 Bank.Font = Enum.Font.FredokaOne
 Bank.Text = "Bank (Z)"
-Bank.TextColor3 = Color3.fromRGB(208, 208, 208)
+Bank.TextColor3 = Color3.fromRGB(255, 255, 255)
 Bank.TextScaled = true
 Bank.TextSize = 14.000
 Bank.TextWrapped = true
 
+Collection.Name = "Collection"
+Collection.Parent = MainFrame
+Collection.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+Collection.BackgroundTransparency = 0.300
+Collection.BorderSizePixel = 2
+Collection.Position = UDim2.new(0.5, 0, 0.400000006, 0)
+Collection.Size = UDim2.new(0, 128, 0, 36)
+Collection.Font = Enum.Font.FredokaOne
+Collection.Text = "Collection (C)"
+Collection.TextColor3 = Color3.fromRGB(255, 255, 255)
+Collection.TextScaled = true
+Collection.TextSize = 14.000
+Collection.TextWrapped = true
+
+DarkMatter.Name = "DarkMatter"
+DarkMatter.Parent = MainFrame
+DarkMatter.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+DarkMatter.BackgroundTransparency = 0.300
+DarkMatter.BorderSizePixel = 2
+DarkMatter.Position = UDim2.new(0.5, 0, 0.600000024, 0)
+DarkMatter.Size = UDim2.new(0, 128, 0, 36)
+DarkMatter.Font = Enum.Font.FredokaOne
+DarkMatter.Text = "DarkMatter (B)"
+DarkMatter.TextColor3 = Color3.fromRGB(255, 255, 255)
+DarkMatter.TextScaled = true
+DarkMatter.TextSize = 14.000
+DarkMatter.TextWrapped = true
+
+EnchantPets.Name = "EnchantPets"
+EnchantPets.Parent = MainFrame
+EnchantPets.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+EnchantPets.BackgroundTransparency = 0.300
+EnchantPets.BorderSizePixel = 2
+EnchantPets.Position = UDim2.new(0.5, 0, 0.800000012, 0)
+EnchantPets.Size = UDim2.new(0, 128, 0, 36)
+EnchantPets.Font = Enum.Font.FredokaOne
+EnchantPets.Text = "Enchant (V)"
+EnchantPets.TextColor3 = Color3.fromRGB(255, 255, 255)
+EnchantPets.TextScaled = true
+EnchantPets.TextSize = 14.000
+EnchantPets.TextWrapped = true
+
+FusePets.Name = "FusePets"
+FusePets.Parent = MainFrame
+FusePets.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+FusePets.BackgroundTransparency = 0.300
+FusePets.BorderSizePixel = 2
+FusePets.Position = UDim2.new(0, 0, 0.199999988, 0)
+FusePets.Size = UDim2.new(0, 128, 0, 36)
+FusePets.Font = Enum.Font.FredokaOne
+FusePets.Text = "Fuse (N)"
+FusePets.TextColor3 = Color3.fromRGB(255, 255, 255)
+FusePets.TextScaled = true
+FusePets.TextSize = 14.000
+FusePets.TextWrapped = true
+
+Golden.Name = "Golden"
+Golden.Parent = MainFrame
+Golden.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+Golden.BackgroundTransparency = 0.300
+Golden.BorderSizePixel = 2
+Golden.Position = UDim2.new(0, 0, 0.399999976, 0)
+Golden.Size = UDim2.new(0, 128, 0, 36)
+Golden.Font = Enum.Font.FredokaOne
+Golden.Text = "Golden (M)"
+Golden.TextColor3 = Color3.fromRGB(255, 255, 255)
+Golden.TextScaled = true
+Golden.TextSize = 14.000
+Golden.TextWrapped = true
+
+Merchant.Name = "Merchant"
+Merchant.Parent = MainFrame
+Merchant.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+Merchant.BackgroundTransparency = 0.300
+Merchant.BorderSizePixel = 2
+Merchant.Position = UDim2.new(0, 0, 0.799999952, 0)
+Merchant.Size = UDim2.new(0, 128, 0, 36)
+Merchant.Font = Enum.Font.FredokaOne
+Merchant.Text = "Merchant (L)"
+Merchant.TextColor3 = Color3.fromRGB(255, 255, 255)
+Merchant.TextScaled = true
+Merchant.TextSize = 14.000
+Merchant.TextWrapped = true
+
+Rainbow.Name = "Rainbow"
+Rainbow.Parent = MainFrame
+Rainbow.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+Rainbow.BackgroundTransparency = 0.300
+Rainbow.BorderSizePixel = 2
+Rainbow.Size = UDim2.new(0, 128, 0, 36)
+Rainbow.Font = Enum.Font.FredokaOne
+Rainbow.Text = "Rainbow (K)"
+Rainbow.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rainbow.TextScaled = true
+Rainbow.TextSize = 14.000
+Rainbow.TextWrapped = true
+
+MainGrid.Name = "MainGrid"
+MainGrid.Parent = MainFrame
+MainGrid.SortOrder = Enum.SortOrder.LayoutOrder
+MainGrid.CellPadding = UDim2.new(0, 0, 0, 0)
+MainGrid.CellSize = UDim2.new(0, 128, 0, 36)
+
+Upgrades.Name = "Upgrades"
+Upgrades.Parent = MainFrame
+Upgrades.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+Upgrades.BackgroundTransparency = 0.300
+Upgrades.BorderSizePixel = 2
+Upgrades.Position = UDim2.new(0, 0, 0.199999988, 0)
+Upgrades.Size = UDim2.new(0, 128, 0, 36)
+Upgrades.Font = Enum.Font.FredokaOne
+Upgrades.Text = "Upgrades (J)"
+Upgrades.TextColor3 = Color3.fromRGB(255, 255, 255)
+Upgrades.TextScaled = true
+Upgrades.TextSize = 14.000
+Upgrades.TextWrapped = true
+
 Mastery.Name = "Mastery"
-Mastery.Parent = GuiFrame
-Mastery.BackgroundColor3 = Color3.fromRGB(173, 173, 173)
-Mastery.BackgroundTransparency = 0.900
-Mastery.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Mastery.BorderSizePixel = 3
-Mastery.Size = UDim2.new(0, 163, 0, 59)
+Mastery.Parent = MainFrame
+Mastery.BackgroundColor3 = Color3.fromRGB(2, 2, 2)
+Mastery.BackgroundTransparency = 0.300
+Mastery.BorderSizePixel = 2
+Mastery.Position = UDim2.new(0, 0, 0.199999988, 0)
+Mastery.Size = UDim2.new(0, 128, 0, 36)
 Mastery.Font = Enum.Font.FredokaOne
-Mastery.Text = "Mastery (Y)"
-Mastery.TextColor3 = Color3.fromRGB(208, 208, 208)
+Mastery.Text = "Mastery (P)"
+Mastery.TextColor3 = Color3.fromRGB(255, 255, 255)
 Mastery.TextScaled = true
 Mastery.TextSize = 14.000
 Mastery.TextWrapped = true
 
-for i,Button in pairs(GuiFrame:GetChildren()) do
+Open.Name = "Open"
+Open.Parent = GameFrame
+Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Open.BackgroundTransparency = 1.000
+Open.Position = UDim2.new(0, 0, 0.852140069, 0)
+Open.Size = UDim2.new(0, 128, 0, 38)
+Open.Font = Enum.Font.FredokaOne
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(85, 255, 127)
+Open.TextScaled = true
+Open.TextSize = 14.000
+Open.TextTransparency = 0.200
+Open.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = GameFrame
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.501945496, 0, 0.852140069, 0)
+Close.Size = UDim2.new(0, 128, 0, 38)
+Close.Font = Enum.Font.FredokaOne
+Close.Text = "Close"
+Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextTransparency = 0.200
+Close.TextWrapped = true
+
+PlayerList.Name = "PlayerList"
+PlayerList.Parent = GameGui
+PlayerList.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+PlayerList.BackgroundTransparency = 0.300
+PlayerList.Position = UDim2.new(0.0172736347, 0, 0.40427807, 0)
+PlayerList.Size = UDim2.new(0, 257, 0, 257)
+PlayerList.Active = true
+PlayerList.Draggable = true
+
+UICorner_3.Parent = PlayerList
+
+Main_2.Name = "Main"
+Main_2.Parent = PlayerList
+Main_2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Main_2.BackgroundTransparency = 0.200
+Main_2.Size = UDim2.new(0, 257, 0, 39)
+
+UICorner_4.Parent = Main_2
+
+Title_2.Name = "Title"
+Title_2.Parent = Main_2
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.BackgroundTransparency = 1.000
+Title_2.Size = UDim2.new(0, 257, 0, 39)
+Title_2.Font = Enum.Font.FredokaOne
+Title_2.Text = "PlayerList"
+Title_2.TextColor3 = Color3.fromRGB(85, 255, 127)
+Title_2.TextScaled = true
+Title_2.TextSize = 14.000
+Title_2.TextWrapped = true
+
+List.Name = "List"
+List.Parent = PlayerList
+List.Active = true
+List.BackgroundColor3 = Color3.fromRGB(190, 190, 190)
+List.BackgroundTransparency = 0.300
+List.BorderSizePixel = 0
+List.Position = UDim2.new(0, 0, 0.151750967, 0)
+List.Size = UDim2.new(0, 256, 0, 203)
+List.ScrollBarThickness = 9
+
+ListTemplate.Name = "ListTemplate"
+ListTemplate.Parent = List
+ListTemplate.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+ListTemplate.BackgroundTransparency = 0.300
+ListTemplate.Size = UDim2.new(0, 247, 0, 38)
+ListTemplate.Visible = false
+
+Avatar.Name = "Avatar"
+Avatar.Parent = ListTemplate
+Avatar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Avatar.BackgroundTransparency = 1.000
+Avatar.Size = UDim2.new(0, 56, 0, 38)
+Avatar.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+PlayerName.Name = "PlayerName"
+PlayerName.Parent = ListTemplate
+PlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.BackgroundTransparency = 1.000
+PlayerName.Position = UDim2.new(0.226720646, 0, 0, 0)
+PlayerName.Size = UDim2.new(0, 191, 0, 19)
+PlayerName.Font = Enum.Font.FredokaOne
+PlayerName.Text = "Roblox_Wmh"
+PlayerName.TextColor3 = Color3.fromRGB(255, 170, 0)
+PlayerName.TextScaled = true
+PlayerName.TextSize = 14.000
+PlayerName.TextWrapped = true
+
+PlayerDisplayName.Name = "PlayerDisplayName"
+PlayerDisplayName.Parent = ListTemplate
+PlayerDisplayName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerDisplayName.BackgroundTransparency = 1.000
+PlayerDisplayName.Position = UDim2.new(0.226720646, 0, 0.5, 0)
+PlayerDisplayName.Size = UDim2.new(0, 191, 0, 19)
+PlayerDisplayName.Font = Enum.Font.FredokaOne
+PlayerDisplayName.Text = "@Roblox_Wmh"
+PlayerDisplayName.TextColor3 = Color3.fromRGB(255, 170, 0)
+PlayerDisplayName.TextScaled = true
+PlayerDisplayName.TextSize = 14.000
+PlayerDisplayName.TextWrapped = true
+
+UIGridLayout.Parent = List
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0, 0, 0, 0)
+UIGridLayout.CellSize = UDim2.new(0, 247, 0, 38)
+
+Open.MouseButton1Click:Connect(function()
+	Ready = false
+end)
+
+Close.MouseButton1Click:Connect(function()
+	Ready = true
+	for i,v in pairs(Player.PlayerGui:GetChildren()) do
+		for i,a in pairs(MainFrame:GetChildren()) do
+			if v.Name == a.Name and v.Enabled == true then
+				v.Enabled = false
+			end
+		end
+	end
+end)
+
+for i, Button in pairs(MainFrame:GetChildren()) do
 	if Button:IsA("TextButton") then
 		Button.MouseButton1Click:Connect(function()
-			if Can == false then
-				Can = true
+			if Ready == false then
 				Player.PlayerGui:FindFirstChild(Button.Name).Enabled = true
-				wait(0.1)
-				Can = false
 			end
 		end)
 	end
 end
 
 Player:GetMouse().KeyDown:Connect(function(Key)
-	if Key == "z" then
+	if Key == "z" and Ready == false then
 		Player.PlayerGui.Bank.Enabled = true
 	else
-		if Key == "c" then
-			Player.PlayerGui.ExclusiveShop.Enabled = true
+		if Key == "c" and Ready == false then
+			Player.PlayerGui.Collection.Enabled = true
 		else
-			if Key == "v" then
-				Player.PlayerGui.Golden.Enabled = true
+			if Key == "v" and Ready == false then
+				Player.PlayerGui.DarkMatter.Enabled = true
 			else
-				if Key == "b" then
-					Player.PlayerGui.Teleport.Enabled = true
+				if Key == "b" and Ready == false then
+					Player.PlayerGui.EnchantPets.Enabled = true
 				else
-					if Key == "n" then
-						Player.PlayerGui.Upgrades.Enabled = true
+					if Key == "n" and Ready == false then
+						Player.PlayerGui.FusePets.Enabled = true
 					else
-						if Key == "m" then
-							Player.PlayerGui.Rainbow.Enabled = true
+						if Key == "m" and Ready == false then
+							Player.PlayerGui.Golden.Enabled = true
 						else
-							if Key == "l" then
-								Player.PlayerGui.Trading.Enabled = true
+							if Key == "l" and Ready == false then
+								Player.PlayerGui.Merchant.Enabled = true
 							else
-								if Key == "k" then
-									Player.PlayerGui.FusePets.Enabled = true
+								if Key == "k" and Ready == false then
+									Player.PlayerGui.Rainbow.Enabled = true
 								else
-									if Key == "j" then
-										Player.PlayerGui.Collection.Enabled = true
+									if Key == "j" and Ready == false then
+										Player.PlayerGui.Upgrades.Enabled = true
 									else
-										if Key == "h" then
-											Player.PlayerGui.DarkMatter.Enabled = true
-										else
-											if Key == "p" then
-												Player.PlayerGui.EnchantPets.Enabled = true
-											else
-												if Key == "t" then
-													Player.PlayerGui.Merchant.Enabled = true
-												else
-													if Key == "u" then
-														Player.PlayerGui.Achievements.Enabled = true
-													else
-														if Key == "y" then
-															Player.PlayerGui.Mastery.Enabled = true
-														end
-													end
-												end
-											end
+										if Key == "p" and Ready == false then
+											Player.PlayerGui.Mastery.Enabled = true
 										end
 									end
 								end
@@ -330,12 +407,39 @@ Player:GetMouse().KeyDown:Connect(function(Key)
 	end
 end)
 
-Player.Chatted:Connect(function(Msg)
-	for i, Gui in pairs(Player.PlayerGui:GetChildren()) do
-		if Gui:IsA("ScreenGui") then
-			if Gui.Name == Msg then
-				Gui.Enabled = true
-			end
+function  Clear ()
+	for i,Frame in pairs(List:GetChildren()) do
+		if Frame:IsA("Frame") then
+			Frame:Destroy()
 		end
 	end
-end)
+end
+
+function  FillUp ()
+	Clear()
+	for i, Player1 in pairs(game.Players:GetChildren()) do
+		ListTemplate:Destroy()
+		local A = ListTemplate:Clone()
+		local B = Avatar:Clone()
+		local C = PlayerName:Clone()
+		local D = PlayerDisplayName:Clone()
+		A.Parent = List
+		A.Visible = true
+		B.Parent = A
+		local userId = Player1.UserId
+		local thumbtype = Enum.ThumbnailType.HeadShot
+		local thumbsize = Enum.ThumbnailSize.Size420x420
+		local content,isReady = game.Players:GetUserThumbnailAsync(userId,thumbtype,thumbsize)
+		B.Image = content
+		C.Parent = A
+		C.Text =  Player1.DisplayName
+		D.Parent = A
+		D.Text = "@" .. Player1.Name
+	end
+end
+
+FillUp()
+
+while wait(0.1) do
+	FillUp()
+end
