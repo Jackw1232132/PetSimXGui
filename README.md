@@ -211,7 +211,7 @@ Merchant.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Merchant.BorderSizePixel = 3
 Merchant.Size = UDim2.new(0, 163, 0, 59)
 Merchant.Font = Enum.Font.FredokaOne
-Merchant.Text = "Merchant (O)"
+Merchant.Text = "Merchant (T)"
 Merchant.TextColor3 = Color3.fromRGB(208, 208, 208)
 Merchant.TextScaled = true
 Merchant.TextSize = 14.000
@@ -306,7 +306,7 @@ Player:GetMouse().KeyDown:Connect(function(Key)
 											if Key == "p" then
 												Player.PlayerGui.EnchantPets.Enabled = true
 											else
-												if Key == "o" then
+												if Key == "t" then
 													Player.PlayerGui.Merchant.Enabled = true
 												else
 													if Key == "u" then
